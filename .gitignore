@@ -7,6 +7,12 @@
 *.o
 *.obj
 
+# Executable names
+
+megaphone
+phonebook
+
+
 # Precompiled Headers
 *.gch
 *.pch
