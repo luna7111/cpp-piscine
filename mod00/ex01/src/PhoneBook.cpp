@@ -20,9 +20,6 @@ PhoneBook::PhoneBook(void) {
 }
 
 PhoneBook::~PhoneBook(void) {
-	for (int i = 0; i < 8; i ++) {
-		contact[i].~Contact();
-	}
 }
 
 void	PhoneBook::cycle_contacts(void) {
@@ -38,16 +35,27 @@ void	PhoneBook::add_contact(void) {
 	std::string	phone_number;
 	std::string	darkest_secret;
 
-	std::cout<<YELLOW<<"Enter first name:"<<WHITE<<std::endl;
-	std::getline(std::cin, first_name);
-	std::cout<<YELLOW<<"Enter last name:"<<WHITE<<std::endl;
-	std::getline(std::cin, last_name);
-	std::cout<<YELLOW<<"Enter nickname:"<<WHITE<<std::endl;
-	std::getline(std::cin, nickname);
-	std::cout<<YELLOW<<"Enter phone number:"<<WHITE<<std::endl;
-	std::getline(std::cin, phone_number);
-	std::cout<<YELLOW<<"Enter their darkest secret:"<<WHITE<<std::endl;
-	std::getline(std::cin, darkest_secret);
+	do {
+		std::cout<<YELLOW<<"Enter first name:"<<WHITE<<std::endl;
+		std::getline(std::cin, first_name);
+	} while (first_name.length() == 0);
+	do {
+		std::cout<<YELLOW<<"Enter last name:"<<WHITE<<std::endl;
+		std::getline(std::cin, last_name);
+	} while (last_name.length() == 0);
+	do {
+		std::cout<<YELLOW<<"Enter nickname:"<<WHITE<<std::endl;
+		std::getline(std::cin, nickname);
+	} while (nickname.length() == 0);
+	do {
+		std::cout<<YELLOW<<"Enter phone number:"<<WHITE<<std::endl;
+		std::getline(std::cin, phone_number);
+	} while (phone_number.length() == 0);
+	do {
+		std::cout<<YELLOW<<"Enter their darkest secret:"<<WHITE<<std::endl;
+		std::getline(std::cin, darkest_secret);
+	} while (darkest_secret.length() == 0);
+
 	cycle_contacts();
 	contact[0] = Contact(first_name, last_name, nickname, phone_number, darkest_secret);
 	if (contact_number < 8)
