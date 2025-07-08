@@ -17,16 +17,22 @@ int	main(void) {
 	PhoneBook	phone_book;
 	std::string user_input;
 
-	while (1) {
-		std::cout<<PURPLE<<"Enter command:"<<WHITE<<std::endl;
-		std::getline(std::cin, user_input);
-		if (user_input == "ADD" || user_input == "add")
-				phone_book.add_contact();
-		else if (user_input == "SEARCH" || user_input == "search")
-				phone_book.search_contact();
-		else if (user_input == "EXIT" || user_input == "exit") {
-			std::cout<<"Goodbye!"<<std::endl;
-			return (0);
+	try {
+		while (1) {
+			std::cout<<PURPLE<<"Enter command:"<<WHITE<<std::endl;
+			std::getline(std::cin, user_input);
+			if (user_input == "ADD" || user_input == "add")
+					phone_book.add_contact();
+			else if (user_input == "SEARCH" || user_input == "search")
+					phone_book.search_contact();
+			else if (user_input == "EXIT" || user_input == "exit") {
+				std::cout<<"Goodbye!"<<std::endl;
+				return (0);
+			}
 		}
+	}
+	catch (int e) {
+		std::cout<<"Exception caught: "<<e<<std::endl;
+		return (0);
 	}
 }
