@@ -6,7 +6,9 @@
 //  Creative Commons CC0 1.0 Universal    '._  _.'   .        .
 //                                           ``
 
-#include <string>
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
+# include <string>
 
 class	Zombie {
 	private:
@@ -20,3 +22,4 @@ class	Zombie {
 };
 
 Zombie	*zombieHorde(int N, std::string _name);
+#endif
