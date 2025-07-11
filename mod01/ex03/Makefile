@@ -8,11 +8,12 @@
 
 ########################
 
-NAME		:=	Moar\ brainz!
+NAME		:=	Unnecessary\ violence
 
 SRC			:=	src/main.cpp\
-				src/Zombie.cpp\
-				src/zombieHorde.cpp
+				src/Weapon.cpp\
+				src/HumanA.cpp\
+				src/HumanB.cpp
 
 OBJ			:=	$(SRC:%.cpp=obj/%.o)
 

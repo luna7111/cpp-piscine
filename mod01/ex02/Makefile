@@ -8,17 +8,15 @@
 
 ########################
 
-NAME		:=	Moar\ brainz!
+NAME		:=	HI\ THIS\ IS\ BRAIN
 
-SRC			:=	src/main.cpp\
-				src/Zombie.cpp\
-				src/zombieHorde.cpp
+SRC			:=	src/main.cpp
 
 OBJ			:=	$(SRC:%.cpp=obj/%.o)
 
 CXX			:=	c++
 
-CXXFLAGS	:=	-Wall -Wextra -Werror -Iinclude -std=c++98
+CXXFLAGS	:=	-Wall -Wextra -Werror -std=c++98
 
 ########################
 
