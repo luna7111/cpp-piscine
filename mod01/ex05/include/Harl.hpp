@@ -6,7 +6,10 @@
 //  Creative Commons CC0 1.0 Universal    '._  _.'   .        .
 //                                           ``
 
-#include <iostream>
+#ifndef HARL_HPP
+# define HARL_HPP
+
+# include <iostream>
 
 class Harl {
 	private:
@@ -19,3 +22,4 @@ class Harl {
 		~Harl(void);
 		void	complain(std::string level);
 };
+#endif
