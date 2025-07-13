@@ -1,10 +1,8 @@
-//                                          _.._  .           .
-//  HumanA.hpp                            .' .-'`        *
-//                                       /  /       +        *
-//  by: luna del Valle                   |  |           *
-//                                       \  '.___.;       +
-//  Creative Commons CC0 1.0 Universal    '._  _.'   .        .
-//                                           ``
+/*
+ * Name: Luna del Valle
+ * File: HumanA.hpp
+ * Created on: Sunday Jul 13, 2025 23:59:37 CEST
+ */
 
 #include <Weapon.hpp>
 #include <iostream>

@@ -1,10 +1,8 @@
-//                                          _.._  .           .
-//  Weapon.cpp                            .' .-'`        *
-//                                       /  /       +        *
-//  by: luna del Valle                   |  |           *
-//                                       \  '.___.;       +
-//  Creative Commons CC0 1.0 Universal    '._  _.'   .        .
-//                                           ``
+/*
+ * Name: Luna del Valle
+ * File: Weapon.cpp
+ * Created on: Monday Jul 14, 2025 00:02:56 CEST
+ */
 
 #include <iostream>
 #include <Weapon.hpp>

@@ -1,10 +1,8 @@
-//                                          _.._  .           .
-//  main.cpp                              .' .-'`        *
-//                                       /  /       +        *
-//  by: luna del Valle                   |  |           *
-//                                       \  '.___.;       +
-//  Creative Commons CC0 1.0 Universal    '._  _.'   .        .
-//                                           ``
+/*
+ * Name: Luna del Valle
+ * File: main.cpp
+ * Created on: Monday Jul 14, 2025 00:03:27 CEST
+ */
 
 #include <iostream>
 #include <fstream>

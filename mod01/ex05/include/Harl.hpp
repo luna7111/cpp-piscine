@@ -1,10 +1,8 @@
-//                                          _.._  .           .
-//  Harl.hpp                              .' .-'`        *
-//                                       /  /       +        *
-//  by: luna del Valle                   |  |           *
-//                                       \  '.___.;       +
-//  Creative Commons CC0 1.0 Universal    '._  _.'   .        .
-//                                           ``
+/*
+ * Name: Luna del Valle
+ * File: Harl.hpp
+ * Created on: Monday Jul 14, 2025 00:06:06 CEST
+ */
 
 #ifndef HARL_HPP
 # define HARL_HPP

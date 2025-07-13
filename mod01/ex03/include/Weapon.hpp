@@ -1,10 +1,8 @@
-//                                          _.._  .           .
-//  Weapon.hpp                            .' .-'`        *
-//                                       /  /       +        *
-//  by: luna del Valle                   |  |           *
-//                                       \  '.___.;       +
-//  Creative Commons CC0 1.0 Universal    '._  _.'   .        .
-//                                           ``
+/*
+ * Name: Luna del Valle
+ * File: Weapon.hpp
+ * Created on: Monday Jul 14, 2025 00:00:19 CEST
+ */
 
 #ifndef WEAPON_HPP
 # define WEAPON_HPP

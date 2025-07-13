@@ -1,10 +1,8 @@
-//                                          _.._  .           .
-//  HumanB.hpp                            .' .-'`        *
-//                                       /  /       +        *
-//  by: luna del Valle                   |  |           *
-//                                       \  '.___.;       +
-//  Creative Commons CC0 1.0 Universal    '._  _.'   .        .
-//                                           ``
+/*
+ * Name: Luna del Valle
+ * File: HumanB.hpp
+ * Created on: Sunday Jul 13, 2025 23:59:55 CEST
+ */
 
 #ifndef HUMANB_HPP
 # define HUMANB_HPP
