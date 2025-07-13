@@ -1,10 +1,8 @@
-//                                          _.._  .           .
-//  Zombie.hpp                            .' .-'`        *
-//                                       /  /       +        *
-//  by: luna del Valle                   |  |           *
-//                                       \  '.___.;       +
-//  Creative Commons CC0 1.0 Universal    '._  _.'   .        .
-//                                           ``
+/*
+ * Name: Luna del Valle
+ * File: Zombie.hpp
+ * Created on: Sunday Jul 13, 2025 23:43:31 CEST
+ */
 
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP

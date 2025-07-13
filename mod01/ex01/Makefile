@@ -1,14 +1,12 @@
-#                                          _.._  .           .
-#  Makefile                              .' .-'`        *
-#                                       /  /       +        *
-#  by: luna del Valle                   |  |           *
-#                                       \  '.___.;       +
-#  Creative Commons CC0 1.0 Universal    '._  _.'   .        .
-#                                           ``
+#
+# Name: Luna del Valle
+# File: Makefile
+# Created on: Sunday Jul 13, 2025 23:51:39 CEST
+#
 
 ########################
 
-NAME		:=	Moar\ brainz!
+NAME		:=	bin
 
 SRC			:=	src/main.cpp\
 				src/Zombie.cpp\

@@ -1,10 +1,8 @@
-//                                          _.._  .           .
-//  Zombie.cpp                            .' .-'`        *
-//                                       /  /       +        *
-//  by: luna del Valle                   |  |           *
-//                                       \  '.___.;       +
-//  Creative Commons CC0 1.0 Universal    '._  _.'   .        .
-//                                           ``
+/*
+ * Name: Luna del Valle
+ * File: Zombie.cpp
+ * Created on: Sunday Jul 13, 2025 23:51:08 CEST
+ */
 
 #include <Zombie.hpp>
 #include <string>
