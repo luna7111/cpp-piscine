@@ -1,14 +1,12 @@
-#                                          _.._  .           .
-#  Makefile                              .' .-'`        *
-#                                       /  /       +        *
-#  by: luna del Valle                   |  |           *
-#                                       \  '.___.;       +
-#  Creative Commons CC0 1.0 Universal    '._  _.'   .        .
-#                                           ``
+#
+# Name: Luna del Valle
+# File: Makefile
+# Created on: Monday Jul 14, 2025 00:14:27 CEST
+#
 
 ########################
 
-NAME		:=	Sed\ is\ for\ losers
+NAME		:=	bin
 
 SRC			:=	src/main.cpp
 
