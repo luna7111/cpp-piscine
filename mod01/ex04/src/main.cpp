@@ -35,13 +35,25 @@ int	main(int argc, char **argv) {
 		return 0;
 	}
 
-	input_file.open(argv[1]);
+    input_file.open(argv[1]);
+	if (!input_file.is_open()) {
+        std::cout<<"Cannot read file."<<std::endl;
+        return 0;
+    }       
+
 	while (std::getline(input_file, line)) {
 		file_content += substitute(line, argv[2], argv[3]) + "\n";
 	}
+
 	input_file.close();
+
 	std::string	filename = std::string(argv[1]) + ".replace";
 	output_file.open(filename.c_str());
+	if (!output_file.is_open()) {
+        std::cout<<"Cannot open output file."<< std::endl;
+        return 0;
+    }       
+
 	output_file<<file_content;
 	output_file.close();
 
