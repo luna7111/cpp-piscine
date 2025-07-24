@@ -6,8 +6,9 @@
 
 #include <Fixed.hpp>
 #include <iostream>
+#include <cmath>
 
-
+/* CONSTRUCTORS */
 
 /* Default constructor */
 Fixed::Fixed() {
@@ -34,14 +35,16 @@ Fixed::Fixed(const int value) {
 Fixed::Fixed(const float value) {
     std::cout<<"Float constructor called"<<std::endl;
 
-    this->int_value = value * (1 << this->fractional_bits_number);
+    this->int_value = roundf(value * (1 << this->fractional_bits_number));
 }
+
 
 /* Default destructor */
 Fixed::~Fixed() {
     std::cout<<"Destructor called"<<std::endl;
 }
 
+/* OPERATOR OVERLOADING */
 
 /* Copy assignment operator */
 Fixed& Fixed::operator=(const Fixed& rhs) {
@@ -60,16 +63,14 @@ std::ostream& operator<<(std::ostream& out, const Fixed &src) {
 }
 
 
+/* MEMBER FUNCTIONS */
 
-/* quedan por implementar las funciones toFloat y toInt */
-/* los constructores de Int y float están hechos pero no probados */
-/* :p */
 int Fixed::toInt(void) const {
     return (this->int_value >> this->fractional_bits_number);
 }
 
 float Fixed::toFloat(void) const {
-    return ((float)this->int_value / (1 << this->fractional_bits_number));
+    return ((float)this->int_value / (float)(1 << this->fractional_bits_number));
 }
 
 
