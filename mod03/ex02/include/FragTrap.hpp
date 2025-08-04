@@ -20,7 +20,6 @@ class FragTrap: public ClapTrap{
 		FragTrap& operator=(const FragTrap& rhs);
 
         void highFivesGuys();
-        void attack(const std::string& target);
 
     private:
 		

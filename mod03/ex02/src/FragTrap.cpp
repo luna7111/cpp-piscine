@@ -50,24 +50,6 @@ FragTrap::~FragTrap() {
     std::cout<<"FragTrap destructor called"<<std::endl;
 }
 
-/* attack member function */
-void FragTrap::attack(const std::string& target) {
-
-    if (this->energy_points <= 0) {
-        std::cout<<"FragTrap "<<this->name<<" tried to attack "<<target<<" but they were too tired."<<std::endl;
-        return ;
-    }
-
-    if (this->hit_points <= 0) {
-        std::cout<<"FragTrap "<<this->name<<" tried to attack "<<target<<" but they were too damaged."<<std::endl;
-        return ;
-    }
-
-    this->energy_points -= std::min(1u, this->energy_points); 
-    std::cout<<"FragTrap "<<this->name<<" attacks "<<target<<", causing "<<this->attack_damage<<" poins of damage!"<<std::endl;
-
-}
-
 void FragTrap::highFivesGuys() {
     
     std::cout<<"FragTrap "<<this->name<<" asks for a high five!"<<std::endl;
