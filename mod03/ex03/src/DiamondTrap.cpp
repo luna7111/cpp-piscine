@@ -18,8 +18,10 @@ DiamondTrap::DiamondTrap(): ClapTrap("default_clap_name") {
 }
 
 /* Named constructor */ 
-DiamondTrap::DiamondTrap(std::string _name): ClapTrap(_name + "_clap_name")  {
+DiamondTrap::DiamondTrap(std::string _name): ClapTrap(_name + "_clap_name") {
     std::cout<<"DiamondTrap named constructor called ("<<_name<<")"<<std::endl;
+
+    ClapTrap::name = _name + "_clap_name";
 
     this->name = _name;
 }
@@ -45,4 +47,7 @@ DiamondTrap::~DiamondTrap() {
     std::cout<<"Destructor called"<<std::endl;
 }
 
-
+void DiamondTrap::debugPrint() {
+    std::cout<<"Name: "<<this->name<<std::endl;
+    std::cout<<"ClapTrap name: "<<ClapTrap::name<<std::endl;
+}

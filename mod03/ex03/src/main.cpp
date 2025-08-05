@@ -13,7 +13,12 @@
 int main() {
 
     {
-        DiamondTrap("Miau");
+        DiamondTrap king("King");
+
+        king.attack("Demon");
+        king.beRepaired(10);
+        king.debugPrint();
+        
     }
 
 }

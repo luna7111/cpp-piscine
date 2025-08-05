@@ -21,7 +21,12 @@ class DiamondTrap: public ScavTrap, public FragTrap {
         virtual ~DiamondTrap ();
 		DiamondTrap& operator=(const DiamondTrap& rhs);
 
+        using ScavTrap::attack;
+        void debugPrint();
     private:
+        using FragTrap::hit_points;
+        using ScavTrap::energy_points;
+        using FragTrap::attack_damage;
 	    std::string name;	
 };
 
