@@ -24,8 +24,8 @@ FragTrap::FragTrap(std::string _name): ClapTrap() {
     std::cout<<"FragTrap named constructor called ("<<_name<<")"<<std::endl;
     this->name = _name;
     this->hit_points = 100;
-    this->energy_points = 50;
-    this->attack_damage = 20;
+    this->energy_points = 100;
+    this->attack_damage = 30;
 }
 
 /* Copy constructor */

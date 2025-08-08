@@ -15,9 +15,11 @@ int main() {
     {
         DiamondTrap king("King");
 
+        king.whoAmI();
+        king.guardGate();
+        king.highFivesGuys();
         king.attack("Demon");
         king.beRepaired(10);
-        king.debugPrint();
         
     }
 

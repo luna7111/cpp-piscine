@@ -22,7 +22,7 @@ class DiamondTrap: public ScavTrap, public FragTrap {
 		DiamondTrap& operator=(const DiamondTrap& rhs);
 
         using ScavTrap::attack;
-        void debugPrint();
+        void whoAmI();
     private:
         using FragTrap::hit_points;
         using ScavTrap::energy_points;

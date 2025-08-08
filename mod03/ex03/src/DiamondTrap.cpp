@@ -47,7 +47,7 @@ DiamondTrap::~DiamondTrap() {
     std::cout<<"Destructor called"<<std::endl;
 }
 
-void DiamondTrap::debugPrint() {
+void DiamondTrap::whoAmI() {
     std::cout<<"Name: "<<this->name<<std::endl;
-    std::cout<<"ClapTrap name: "<<ClapTrap::name<<std::endl;
+    std::cout<<"ClapTrap name: "<<this->ClapTrap::name<<std::endl;
 }
