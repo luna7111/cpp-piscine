@@ -7,6 +7,7 @@
 #include <iostream>
 #include <climits>
 #include <ClapTrap.hpp>
+#include <ScavTrap.hpp>
 #include <FragTrap.hpp>
 
 /* Default constructor */

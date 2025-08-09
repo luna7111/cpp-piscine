@@ -34,7 +34,7 @@ int main() {
     {
         FragTrap eli("Eli");
 
-        for (int i = 51; i > 0; i--)
+        for (int i = 101; i > 0; i--)
             eli.attack("Dummy");
     }
 
