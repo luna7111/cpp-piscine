@@ -8,6 +8,8 @@
 
 #define MATERIASOURCE_HPP
 
+#include <AMateria.hpp>
+#include <inventorySlots.hpp>
 
 class MateriaSource {
     public:
@@ -19,7 +21,7 @@ class MateriaSource {
         AMateria* createMateria(std::string const& type);
         void learnMateria(AMateria* materia);
     private:
-	    AMateria* materias[4];
+	    inventorySlot inventory[4];
 };
 
 #endif /* end of include guard MATERIASOURCE_HPP */

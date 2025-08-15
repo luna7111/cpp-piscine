@@ -11,7 +11,16 @@
 Character::Character() {
     this->name = "default";
     for (int i = 0; i < 4; i++) {
-        this->inventory_slot_status[i] = EMPTY;
+        this->inventory[y].status = EMPTY;
+    }
+    std::cout<<"Character default constructor called"<<std::endl;
+}
+
+/* Default constructor */
+Character::Character(std::string _name) {
+    this->name = _name;
+    for (int i = 0; i < 4; i++) {
+        this->inventory[i].status = EMPTY;
     }
     std::cout<<"Character default constructor called"<<std::endl;
 }
@@ -37,9 +46,9 @@ Character::~Character() {
 
 void Character::equip(AMateria* materia) {
     for (int i = 0; i < 4 ; i++) {
-        if (this->inventory_slot_status[i] == EMPTY) {
-            this->inventory_slot_status[i] = EQUIPED;
-            this->inventory[i] = materia;
+        if (this->inventory[i].status == EMPTY) {
+            this->inventory[i].status = EQUIPED;
+            this->inventory[i].materia = materia;
             std::cout<<"Materia equiped"<<std::endl;
             return;
         }
@@ -47,16 +56,17 @@ void Character::equip(AMateria* materia) {
 }
 
 void Charecter::unequip(int index) {
-    if (this->inventory_slot_status[i] == EQUIPED) {
-        inventory_slot_status[i] == EMPTY;
-        std::cout<<"Materia unequipped"<<std::endl;
+    if (this->inventory_slot_status[i] == EMPTY) {
+        return;
     }
+    inventory_slot_status[i] == EMPTY;
+    std::cout<<"Materia unequipped"<<std::endl;
 }
 
 void Character::use(int index,  ICharecter& target) {
-    if (this->inventory_slot_status[index] == EMPTY) {
+    if (this->inventory[index].status == EMPTY) {
         std::cout<<"Empty slot"<<std::endl;
         return;
     }
-    this->inventory[index].use(target);
+    this->inventory[index].materia.use(target);
 }

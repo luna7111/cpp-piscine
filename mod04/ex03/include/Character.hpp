@@ -8,9 +8,7 @@
 
 #define CHARACTER_HPP
 
-typedef enum SlotStatus {
-    EMPTY, EQUIPED, USED
-} SlotStatus;
+#include <inventorySlots.hpp>
 
 class Character: public ICharacter {
     public:
@@ -25,8 +23,7 @@ class Character: public ICharacter {
         virtual void unequip(int idx) = 0;
         virtual void use(int idx, ICharacter& target) = 0;
     private:
-        AMateria* inventory[4];
-        SlotStatus inventory_slot_status[4];
+        inventorySlot inventory[4];
         std::string name;
 };
 
