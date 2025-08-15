@@ -8,9 +8,9 @@
 
 #define CHARACTER_HPP
 
-enum SlotStatus {
+typedef enum SlotStatus {
     EMPTY, EQUIPED, USED
-}
+} SlotStatus;
 
 class Character: public ICharacter {
     public:
