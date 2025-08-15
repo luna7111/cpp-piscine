@@ -5,6 +5,7 @@
  */
 
 #include <MateriaSource.hpp>
+#include <iostream>
 
 /* Default constructor */
 MateriaSource::MateriaSource() {
@@ -22,7 +23,7 @@ MateriaSource::MateriaSource(const MateriaSource& source) {
 }
 
 /* Copy assignment operator */
-MateriaSource& MateriaSource::operator=(cont MateriaSource& rhs) {
+MateriaSource& MateriaSource::operator=(const MateriaSource& rhs) {
     std::cout<<"Copy assignment operator called"<<std::endl;
 
     for (int i = 0; i < 4; i++) {
@@ -37,15 +38,26 @@ MateriaSource::~MateriaSource() {
     std::cout<<"Destructor called"<<std::endl;
 }
 
-void learnMateria(AMateria* materia) {
+void MateriaSource::learnMateria(AMateria* materia) {
     for (int i = 0; i < 4; i++) {
         if (this->inventory[i].status == EMPTY) {
 
-            this-inventory[i].status == EQUIPED;
-            this-inventory[i].materia = materia;
+            this->inventory[i].status = EQUIPED;
+            this->inventory[i].materia = materia;
 
             std::cout<<"Learned "<<materia->getType()<<std::endl;
             return;
         }
     }
+    std::cout<<"Materia source already knows 4 materias"<<std::endl;
+}
+
+AMateria* MateriaSource::createMateria(std::string const& type) {
+    for (int i = 0; i < 4; i++) {
+        if (this->inventory[i].status == EQUIPED && type == this->inventory[i].materia->getType()) {
+            return this->inventory[i].materia->clone();
+        }
+    }
+    std::cout<<"Materia Source doesn't know this materia type"<<std::endl;
+    return NULL;
 }

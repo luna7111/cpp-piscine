@@ -9,6 +9,7 @@
 #define CHARACTER_HPP
 
 #include <inventorySlots.hpp>
+#include <ICharacter.hpp>
 
 class Character: public ICharacter {
     public:
@@ -20,8 +21,8 @@ class Character: public ICharacter {
 
         virtual std::string const& getName() const;
         virtual void equip(AMateria* m);
-        virtual void unequip(int idx) = 0;
-        virtual void use(int idx, ICharacter& target) = 0;
+        virtual void unequip(int idx);
+        virtual void use(int idx, ICharacter& target);
     private:
         inventorySlot inventory[4];
         std::string name;

@@ -8,14 +8,12 @@
 
 NAME		:=	bin
 
-SRC			:=	main.cpp\
-				AMateria.cpp\
-				Ice.cpp\
-				Cure.cpp\
-				ICharacter.cpp\
-				Character.cpp\
-				IMateriaSource.cpp\
-				MateriaSource.cpp
+SRC			:=	src/AMateria.cpp\
+				src/Ice.cpp\
+				src/Cure.cpp\
+				src/Character.cpp\
+				src/MateriaSource.cpp\
+				src/main.cpp
 
 OBJ			:=	$(SRC:%.cpp=obj/%.o)
 

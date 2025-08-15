@@ -8,13 +8,15 @@
 
 #define INVENTORY_SLOTS_HPP
 
+#include <AMateria.hpp>
+
 typedef enum slotStatus {
     EMPTY, EQUIPED
 } SlotStatus;
 
 typedef struct inventorySlot {
     slotStatus status;
-    AMateria *status;
+    AMateria *materia;
 } InventorySlot;
 
 #endif /* end of include guard INVENTORY_SLOTS_HPP */

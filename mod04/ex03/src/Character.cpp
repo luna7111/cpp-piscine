@@ -6,12 +6,13 @@
 
 #include <Character.hpp>
 #include <AMateria.hpp>
+#include <iostream>
 
 /* Default constructor */
 Character::Character() {
     this->name = "default";
     for (int i = 0; i < 4; i++) {
-        this->inventory[y].status = EMPTY;
+        this->inventory[i].status = EMPTY;
     }
     std::cout<<"Character default constructor called"<<std::endl;
 }
@@ -36,6 +37,10 @@ Character::Character(const Character& source) {
 Character& Character::operator=(const Character& rhs) {
     std::cout<<"Character copy assignment operator called"<<std::endl;
 
+    this->name = rhs.name;
+    for (int i = 0; i < 4; i++) {
+        this->inventory[i] = rhs.inventory[i];
+    }
     return (*this);
 }
 
@@ -55,18 +60,27 @@ void Character::equip(AMateria* materia) {
     }
 }
 
-void Charecter::unequip(int index) {
-    if (this->inventory_slot_status[i] == EMPTY) {
+void Character::unequip(int index) {
+    if (this->inventory[index].status == EMPTY) {
+        std::cout<<"Slot is already empty."<<std::endl;
         return;
     }
-    inventory_slot_status[i] == EMPTY;
+    inventory[index].status = EMPTY;
     std::cout<<"Materia unequipped"<<std::endl;
 }
 
-void Character::use(int index,  ICharecter& target) {
+void Character::use(int index, ICharacter& target) {
     if (this->inventory[index].status == EMPTY) {
         std::cout<<"Empty slot"<<std::endl;
         return;
     }
-    this->inventory[index].materia.use(target);
+    if (index < 0 || index >= 4) {
+        std::cout<<"Index out of range"<<std::endl;
+        return;
+    }
+    this->inventory[index].materia->use(target);
+}
+
+std::string const& Character::getName() const {
+    return this->name;
 }

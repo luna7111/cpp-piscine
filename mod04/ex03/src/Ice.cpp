@@ -5,6 +5,7 @@
  */
 
 #include <Ice.hpp>
+#include <iostream>
 
 /* Default constructor */
 Ice::Ice(): AMateria("ice") {
@@ -21,7 +22,7 @@ Ice::Ice(const Ice& source): AMateria("ice") {
 /* Copy assignment operator */
 Ice& Ice::operator=(const Ice& rhs) {
     std::cout<<"Ice copy assignment operator called"<<std::endl;
-    *this = rhs;
+    this->type = rhs.type;
     return (*this);
 }
 

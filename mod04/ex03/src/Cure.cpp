@@ -5,9 +5,10 @@
  */
 
 #include <Cure.hpp>
+#include <iostream>
 
 /* Default constructor */
-Cure::Cure() {
+Cure::Cure(): AMateria("cure") {
     std::cout<<"Cure default constructor called"<<std::endl;
 }
 
@@ -22,6 +23,7 @@ Cure::Cure(const Cure& source) {
 Cure& Cure::operator=(const Cure& rhs) {
     std::cout<<"Cure copy assignment operator called"<<std::endl;
 
+    this->type = rhs.type;
     return (*this);
 }
 
