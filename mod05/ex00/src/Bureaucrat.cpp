@@ -43,7 +43,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs) {
 
 /* output stream operator */
 std::ostream& operator << (std::ostream &out, Bureaucrat& src) {
-    out << src.getName() << " (" << src.getGrade() << ")" << std::endl;
+    out << src.getName() << ", bureaucrat grade " << src.getGrade() << "." << std::endl;
     return out;
 }
 
