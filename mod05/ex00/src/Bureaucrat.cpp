@@ -1,7 +1,7 @@
 /*
  * Name: Luna del Valle
  * File: Bureaucrat.cpp
- * Created on: jueves sep 18, 2025 19:08:34 CEST
+ * Created on: sep 18, 2025 19:08:34 CEST
  */
 
 #include <Bureaucrat.hpp>
@@ -12,7 +12,7 @@ Bureaucrat::Bureaucrat(): _name("Default name"), _grade(MINIMUM_GRADE) {
     std::cout << "Bureaucrat default constructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string name, unsigned int grade): _name(name), _grade(grade) {
+Bureaucrat::Bureaucrat(const std::string name, unsigned int grade): _name(name), _grade(grade) {
 	std::cout << "Bureaucrat constructor called" << std::endl;
 
 	if (grade > MINIMUM_GRADE) {
@@ -67,6 +67,6 @@ void Bureaucrat::decrementGrade() {
 }
 
 std::ostream& operator << (std::ostream& out, Bureaucrat& src) {
-	out << src.getName() << " (" << src.getGrade() << ") ";
+	out << src.getName() << ", bureaucrat grade " << src.getGrade();
 	return out;
 }
