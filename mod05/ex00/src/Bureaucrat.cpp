@@ -56,12 +56,14 @@ void Bureaucrat::incrementGrade() {
 	if (this->_grade <= MAXIMUM_GRADE) {
 		throw GradeTooHighException();
 	}
+	this->_grade -= 1;
 }
 
 void Bureaucrat::decrementGrade() {
 	if (this->_grade >= MINIMUM_GRADE) {
 		throw GradeTooLowException();
 	}
+	this->_grade += 1;
 }
 
 std::ostream& operator << (std::ostream& out, Bureaucrat& src) {
