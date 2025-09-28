@@ -18,6 +18,7 @@ Bureaucrat::Bureaucrat(const std::string name, unsigned int grade): _name(name),
 	if (grade > MINIMUM_GRADE) {
 		throw GradeTooLowException();
 	}
+
 	if (grade < MAXIMUM_GRADE) {
 		throw GradeTooHighException();
 	}
