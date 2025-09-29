@@ -49,7 +49,7 @@ class Form {
 
 };
 
-std::ostream& operator << (std::ostream& out, Form& src);
+std::ostream& operator << (std::ostream& out, const Form& src);
 
 
 #endif //FORM_HPP

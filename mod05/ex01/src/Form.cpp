@@ -29,7 +29,7 @@ _isSigned(false)
         throw GradeTooLowException();
     }
 
-    if (gradeToSign > MAXIMUM_GRADE || gradeToExecute > MAXIMUM_GRADE) {
+    if (gradeToSign < MAXIMUM_GRADE || gradeToExecute < MAXIMUM_GRADE) {
         throw GradeTooHighException();
     }
 
@@ -82,18 +82,17 @@ void Form::beSigned(const Bureaucrat& signatory) {
     this->_isSigned = true;
 }
 
-std::ostream& operator << (std::ostream& out, Form& src) {
+std::ostream& operator << (std::ostream& out, const Form& src) {
     out << src.getName()
     << ", grade to sign " << src.getGradeToSign()
-    << ", grade to execute." << src.getGradeToExecute();
+    << ", grade to execute " << src.getGradeToExecute() << ".";
 
     if (src.getSignature() == true) {
-        out << " Already Signed.";
+        out << " Signed.";
     }
     else {
         out << " Unsigned.";
     }
-    out << std::endl;
 
     return out;
 }
