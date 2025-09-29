@@ -10,6 +10,8 @@
 
 #include <string>
 
+class Form;
+
 class Bureaucrat {
     public: /* Constructors and Destructors */
         Bureaucrat ();
@@ -28,6 +30,8 @@ class Bureaucrat {
 
 		void incrementGrade();
 		void decrementGrade();
+
+		void signForm(Form& toSign) const;
 
 	public: /* Exceptions */
 		class GradeTooHighException: public std::exception {
