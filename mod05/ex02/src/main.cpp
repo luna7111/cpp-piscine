@@ -7,12 +7,12 @@
 #include <Bureaucrat.hpp>
 #include <iostream>
 #include <fstream>
-#include <Form.hpp>
+#include <AForm.hpp>
 
 int main() {
 
     try {
-        Form document1;
+        AForm document1;
 
         std::cout << "[Test] getName(): " << document1.getName() << std::endl;
         std::cout << "[Test] getGradeToSign(): " << document1.getGradeToSign() << std::endl;
@@ -28,7 +28,7 @@ int main() {
 
     try {
         std::cout << "[Test] instantiate a form with gradeToSign = 151" << std::endl;
-        Form document2("Doc 2", 151, 1);
+        AForm document2("Doc 2", 151, 1);
     }
     catch (std::exception &e) {
         std::cerr << e.what() << std::endl;
@@ -38,7 +38,7 @@ int main() {
 
     try {
         std::cout << "[Test] instantiate a form with gradeToSign = 0" << std::endl;
-        Form document2("Doc 2", 0, 1);
+        AForm document2("Doc 2", 0, 1);
     }
     catch (std::exception &e) {
         std::cerr << e.what() << std::endl;
@@ -48,7 +48,7 @@ int main() {
 
     try {
         std::cout << "[Test] instantiate a form with gradeToExecute = 151" << std::endl;
-        Form document2("Doc 2", 1, 151);
+        AForm document2("Doc 2", 1, 151);
     }
     catch (std::exception &e) {
         std::cerr << e.what() << std::endl;
@@ -58,7 +58,7 @@ int main() {
 
     try {
         std::cout << "[Test] instantiate a form with gradeToExecute = 0" << std::endl;
-        Form document2("Doc 2", 1, 0);
+        AForm document2("Doc 2", 1, 0);
     }
     catch (std::exception &e) {
         std::cerr << e.what() << std::endl;
@@ -70,7 +70,7 @@ int main() {
         Bureaucrat michael("Michael", 50);
         Bureaucrat jan("Jan", 20);
 
-        Form doc("Paper Sale Form", 30, 1);
+        AForm doc("Paper Sale Form", 30, 1);
 
         std::cout << "[Test] Grade 50 Bureaucrat signs form with gradeToSign = 30" << std::endl;
         michael.signForm(doc);

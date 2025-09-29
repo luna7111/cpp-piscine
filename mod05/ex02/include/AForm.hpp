@@ -10,14 +10,14 @@
 #include <string>
 #include <Bureaucrat.hpp>
 
-class Form {
+class AForm {
 
     public: /* Constructors and destructors */
-        Form();
-        Form(const std::string& name, unsigned int gradeToSign, unsigned int gradeToExecute);
-        Form(const Form& src);
-        virtual ~Form();
-        Form& operator = (const Form& rhs);
+        AForm();
+        AForm(const std::string& name, unsigned int gradeToSign, unsigned int gradeToExecute);
+        AForm(const AForm& src);
+        virtual ~AForm();
+        AForm& operator = (const AForm& rhs);
 
     private: /* attributes */
         const std::string _name ;
@@ -49,7 +49,7 @@ class Form {
 
 };
 
-std::ostream& operator << (std::ostream& out, const Form& src);
+std::ostream& operator << (std::ostream& out, const AForm& src);
 
 
 #endif //FORM_HPP

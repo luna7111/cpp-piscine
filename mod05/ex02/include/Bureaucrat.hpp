@@ -10,7 +10,7 @@
 
 #include <string>
 
-class Form;
+class AForm;
 
 class Bureaucrat {
     public: /* Constructors and Destructors */
@@ -31,7 +31,7 @@ class Bureaucrat {
 		void incrementGrade();
 		void decrementGrade();
 
-		void signForm(Form& toSign) const;
+		void signForm(AForm& toSign) const;
 
 	public: /* Exceptions */
 		class GradeTooHighException: public std::exception {
