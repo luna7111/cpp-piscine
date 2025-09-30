@@ -4,11 +4,11 @@
  * Created on: 28/9/25 17:13
  */
 
-#include <AForm.hpp>
+#include <Form.hpp>
 #include <Auxiliary.hpp>
 #include <iostream>
 
-AForm::AForm():
+Form::Form():
 _name("Default"),
 _gradeToSign(MAXIMUM_GRADE),
 _gradeToExecute(MAXIMUM_GRADE),
@@ -17,7 +17,7 @@ _isSigned(false)
     std::cout << "Form default constructor called" << std::endl;
 }
 
-AForm::AForm(const std::string& name, unsigned int gradeToSign, unsigned int gradeToExecute):
+Form::Form(const std::string& name, unsigned int gradeToSign, unsigned int gradeToExecute):
 _name(name),
 _gradeToSign(gradeToSign),
 _gradeToExecute(gradeToExecute),
@@ -35,7 +35,7 @@ _isSigned(false)
 
 }
 
-AForm::AForm(const AForm& src):
+Form::Form(const Form& src):
 _name(src.getName()),
 _gradeToSign(src.getGradeToSign()),
 _gradeToExecute(src.getGradeToExecute()),
@@ -44,33 +44,33 @@ _isSigned(src.getSignature())
     std::cout << "Form copy constructor called" << std::endl;
 }
 
-AForm& AForm::operator = (const AForm& rhs) {
+Form& Form::operator = (const Form& rhs) {
     this->_isSigned = rhs.getSignature();
 
     return *this;
 }
 
-AForm::~AForm() {
+Form::~Form() {
     std::cout << "Form destructor called" << std::endl;
 }
 
-std::string AForm::getName() const {
+std::string Form::getName() const {
     return this->_name;
 }
 
-unsigned int AForm::getGradeToSign() const {
+unsigned int Form::getGradeToSign() const {
     return this->_gradeToSign;
 }
 
-unsigned int AForm::getGradeToExecute() const {
+unsigned int Form::getGradeToExecute() const {
     return this->_gradeToExecute;
 }
 
-bool AForm::getSignature() const {
+bool Form::getSignature() const {
     return this->_isSigned;
 }
 
-void AForm::beSigned(const Bureaucrat& signatory) {
+void Form::beSigned(const Bureaucrat& signatory) {
     if (signatory.getGrade() > this->_gradeToSign) {
         throw GradeTooLowException();
     }
@@ -82,7 +82,7 @@ void AForm::beSigned(const Bureaucrat& signatory) {
     this->_isSigned = true;
 }
 
-std::ostream& operator << (std::ostream& out, const AForm& src) {
+std::ostream& operator << (std::ostream& out, const Form& src) {
     out << src.getName()
     << ", grade to sign " << src.getGradeToSign()
     << ", grade to execute " << src.getGradeToExecute() << ".";

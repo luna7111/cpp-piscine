@@ -10,14 +10,14 @@
 #include <string>
 #include <Bureaucrat.hpp>
 
-class AForm {
+class Form {
 
     public: /* Constructors and destructors */
-        AForm();
-        AForm(const std::string& name, unsigned int gradeToSign, unsigned int gradeToExecute);
-        AForm(const AForm& src);
-        virtual ~AForm();
-        AForm& operator = (const AForm& rhs);
+        Form();
+        Form(const std::string& name, unsigned int gradeToSign, unsigned int gradeToExecute);
+        Form(const Form& src);
+        virtual ~Form();
+        Form& operator = (const Form& rhs);
 
     private: /* attributes */
         const std::string _name ;
@@ -33,7 +33,6 @@ class AForm {
         unsigned int getGradeToExecute() const;
 
         void beSigned(const Bureaucrat& signatory);
-        virtual void execute(const Bureaucrat& executor) const = 0;
 
     public: /* Exceptions */
         class GradeTooHighException: public std::exception {
@@ -50,7 +49,7 @@ class AForm {
 
 };
 
-std::ostream& operator << (std::ostream& out, const AForm& src);
+std::ostream& operator << (std::ostream& out, const Form& src);
 
 
 #endif //FORM_HPP
