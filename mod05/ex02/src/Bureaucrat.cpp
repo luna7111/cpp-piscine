@@ -6,10 +6,8 @@
 
 #include <Auxiliary.hpp>
 #include <Bureaucrat.hpp>
-#include <Form.hpp>
+#include <AForm.hpp>
 #include <iostream>
-
-#include "Form.hpp"
 
 /* Default constructor */
 Bureaucrat::Bureaucrat(): _name("Default name"), _grade(MINIMUM_GRADE) {
@@ -72,23 +70,23 @@ void Bureaucrat::decrementGrade() {
 	this->_grade += 1;
 }
 
-void Bureaucrat::signForm(Form &toSign) const{
+void Bureaucrat::signForm(AForm &toSign) const{
 	try {
 		toSign.beSigned(*this);
 	}
-	catch (Form::GradeTooLowException& e) {
+	catch (AForm::GradeTooLowException& e) {
 		std::cout << this->_name
 		<< " couldnt sign " << toSign.getName()
         << " because their grade is too low." << std::endl;
 		return ;
 	}
-	catch (Form::GradeTooHighException& e) {
+	catch (AForm::GradeTooHighException& e) {
 		std::cout << this->_name
 		<< " couldnt sign " << toSign.getName()
 		<< " because their grade is too high." << std::endl;
 		return ;
 	}
-	catch (Form::AlreadySignedException& e) {
+	catch (AForm::AlreadySignedException& e) {
 		std::cout << this->_name
 		<< " couldnt sign " << toSign.getName()
 		<< " because the form was already signed." << std::endl;

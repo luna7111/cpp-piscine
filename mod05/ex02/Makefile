@@ -9,7 +9,8 @@
 NAME		:=	bin
 
 SRC			:=	src/Bureaucrat.cpp\
-				src/Form.cpp\
+				src/AForm.cpp\
+				src/ShrubberyCreationForm.cpp\
 				src/main.cpp
 
 OBJ			:=	$(SRC:%.cpp=obj/%.o)
