@@ -76,20 +76,14 @@ void Bureaucrat::signForm(AForm &toSign) const{
 	}
 	catch (AForm::GradeTooLowException& e) {
 		std::cout << this->_name
-		<< " couldnt sign " << toSign.getName()
+		<< " couldn't sign " << toSign.getName()
         << " because their grade is too low." << std::endl;
-		return ;
-	}
-	catch (AForm::GradeTooHighException& e) {
-		std::cout << this->_name
-		<< " couldnt sign " << toSign.getName()
-		<< " because their grade is too high." << std::endl;
 		return ;
 	}
 	catch (AForm::AlreadySignedException& e) {
 		std::cout << this->_name
-		<< " couldnt sign " << toSign.getName()
-		<< " because the form was already signed." << std::endl;
+		<< " couldn't sign " << toSign.getName()
+		<< " because it was already signed." << std::endl;
 		return ;
 	}
 	catch (std::exception& e) {
@@ -100,6 +94,28 @@ void Bureaucrat::signForm(AForm &toSign) const{
 		return ;
 	}
 	std::cout << this->_name << " signed " << toSign.getName() << std::endl;
+}
+
+void Bureaucrat::executeForm(const AForm& form) const {
+	try {
+		form.execute(*this);
+	}
+	catch (AForm::NotSignedException &e) {
+		std::cout << this->_name
+		<< " couldn't execute " << form.getName()
+		<< " because the form wasn't signed." << std::endl;
+	}
+	catch (AForm::GradeTooLowException &e) {
+		std::cout << this->_name
+		<< " couldn't execute " << form.getName()
+		<< " because their grade is too low." << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout << this->_name
+		<< " couldn't execute " << form.getName()
+		<< " because: " << e.what() << std::endl;
+	}
+	std::cout << this->_name << " executed " << form.getName() << std::endl;
 }
 
 std::ostream& operator << (std::ostream& out, const Bureaucrat& src) {
