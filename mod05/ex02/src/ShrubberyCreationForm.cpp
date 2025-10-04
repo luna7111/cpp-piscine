@@ -32,10 +32,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 
 void ShrubberyCreationForm::_authorisedAction() const {
     std::ofstream file;
-    const std::string asciiTrees = "tree here";
     std::string filename = this->getTarget() + "_shrubbery";
 
     file.open(filename.c_str());
-    file << asciiTrees;
+    file << TREE_ASCII_ART;
     file.close();
 }

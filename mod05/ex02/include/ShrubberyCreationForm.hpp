@@ -23,5 +23,11 @@ class ShrubberyCreationForm: public AForm {
 
 };
 
+const std::string TREE_ASCII_ART(" ######\n"
+                                 "#0##0#0#  ####\n"
+                                 "###\\/### ######\n"
+                                 "   || %   \\|/\n"
+                                 "   || |    |   \n"
+                                 "MMMMMMMMMMMMMMM");
 
 #endif //SHRUBBERYCREATIONFORM_HPP
