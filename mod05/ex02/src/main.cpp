@@ -14,10 +14,14 @@
 int main() {
 
     try {
-        const ShrubberyCreationForm doc("wiwi");
-        const Bureaucrat angela("Angela", MAXIMUM_GRADE);
+        ShrubberyCreationForm doc("file");
+        Bureaucrat angela("Angela", 138);
 
-        doc.execute(angela);
+        angela.executeForm(doc);
+        angela.signForm(doc);
+        angela.incrementGrade();
+        angela.signForm(doc);
+        angela.executeForm(doc);
     }
     catch (std::exception& e) {
         std::cerr << e.what() << std::endl;
