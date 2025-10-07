@@ -33,5 +33,15 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 }
 
 void RobotomyRequestForm::_authorisedAction() const {
-    std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+    std::cout << "bszrszrsrzrsrz" << std::endl;
+    switch (rand() % 2) {
+        case 1:
+            std::cout << this->getTarget() << " has been successfully robotomized." << std::endl;
+            return;
+        case 0:
+            std::cout << this->getTarget() << "'s robotomy failed." << std::endl;
+            return;
+        default:
+            std::cerr << "Math stopped working :(" << std::cout;
+    }
 }

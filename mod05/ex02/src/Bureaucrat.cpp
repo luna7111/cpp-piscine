@@ -99,6 +99,7 @@ void Bureaucrat::signForm(AForm &toSign) const{
 void Bureaucrat::executeForm(const AForm& form) const {
 	try {
 		form.execute(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
 	}
 	catch (AForm::NotSignedException &e) {
 		std::cout << this->_name
@@ -115,7 +116,6 @@ void Bureaucrat::executeForm(const AForm& form) const {
 		<< " couldn't execute " << form.getName()
 		<< " because: " << e.what() << std::endl;
 	}
-	std::cout << this->_name << " executed " << form.getName() << std::endl;
 }
 
 std::ostream& operator << (std::ostream& out, const Bureaucrat& src) {

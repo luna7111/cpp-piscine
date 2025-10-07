@@ -12,7 +12,7 @@ SRC			:=	src/Bureaucrat.cpp\
 				src/AForm.cpp\
 				src/ShrubberyCreationForm.cpp\
 				src/RobotomyRequestForm.cpp\
-				src/PresidentialPardon.cpp\
+				src/PresidentialPardonForm.cpp\
 				src/main.cpp
 
 OBJ			:=	$(SRC:%.cpp=obj/%.o)
