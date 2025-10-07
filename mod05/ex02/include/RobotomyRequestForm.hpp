@@ -23,4 +23,6 @@ class RobotomyRequestForm: public AForm {
 
 };
 
+const unsigned int RRF_GRADE_TO_SIGN = 72;
+const unsigned int RRF_GRADE_TO_EXECUTE = 45;
 #endif
