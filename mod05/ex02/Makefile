@@ -11,6 +11,8 @@ NAME		:=	bin
 SRC			:=	src/Bureaucrat.cpp\
 				src/AForm.cpp\
 				src/ShrubberyCreationForm.cpp\
+				src/RobotomyRequestForm.cpp\
+				src/PresidentialPardon.cpp\
 				src/main.cpp
 
 OBJ			:=	$(SRC:%.cpp=obj/%.o)
@@ -34,7 +36,7 @@ obj/%.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -rf obj
+	rm -rf obj file_shrubbery
 
 fclean: clean
 	rm -rf $(NAME)
