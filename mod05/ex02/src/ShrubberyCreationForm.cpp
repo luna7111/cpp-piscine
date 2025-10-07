@@ -9,19 +9,19 @@
 #include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm():
-AForm("ShrubberyCreationForm", 145, 137, "Default")
+AForm("ShrubberyCreationForm", SCF_GRADE_TO_SIGN, SCF_GRADE_TO_EXECUTE, "Default")
 {
     std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target):
-AForm("ShrubberyCreationForm", 145, 137, target)
+AForm("ShrubberyCreationForm", SCF_GRADE_TO_SIGN, SCF_GRADE_TO_EXECUTE, target)
 {
     std::cout << "ShrubberyCreationForm constructor called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src):
-AForm("ShrubberyCreationForm", 145, 137, src.getTarget())
+AForm("ShrubberyCreationForm", SCF_GRADE_TO_SIGN, SCF_GRADE_TO_EXECUTE, src.getTarget())
 {
     std::cout << "ShrubberyCreationForm copy constructor called" << std::endl;
 }

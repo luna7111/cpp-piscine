@@ -23,6 +23,9 @@ class ShrubberyCreationForm: public AForm {
 
 };
 
+const unsigned int SCF_GRADE_TO_SIGN = 145;
+const unsigned int SCF_GRADE_TO_EXECUTE = 137;
+
 const std::string TREE_ASCII_ART(" ######\n"
                                  "#0##0#0#  ####\n"
                                  "###\\/### ######\n"
