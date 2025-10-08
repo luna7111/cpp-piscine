@@ -8,24 +8,21 @@
 #include <iostream>
 #include <fstream>
 #include <AForm.hpp>
-#include <ShrubberyCreationForm.hpp>
+#include <Intern.hpp>
 #include <cstdlib>
 
-#include "Auxiliary.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-
 int main() {
-
     srand(time(0));
 
-
     try {
-        std::cout << "--- execute() with not enough grade ---" << std::endl;
-        PresidentialPardonForm doc("Mumbo");
-        Bureaucrat grian("Grian", MINIMUM_GRADE);
+        Bureaucrat miguel("Miguel", 1);
+        Intern ryan;
 
-        doc.execute(grian);
+        AForm* form = ryan.makeForm("ShrubberyCreationForm", "Ines");
+
+        miguel.signForm(*form);
+        miguel.executeForm(*form);
+        delete form;
     }
     catch (std::exception& e) {
         std::cerr << e.what() << std::endl;
@@ -34,13 +31,14 @@ int main() {
     std::cout << std::endl;
 
     try {
-        std::cout << "--- execute() with enough grade ---" << std::endl;
+        Bureaucrat miguel("Miguel", 1);
+        Intern ryan;
 
-        PresidentialPardonForm doc("Jevin");
-        Bureaucrat xisuma("Xisuma", MAXIMUM_GRADE);
+        AForm* form = ryan.makeForm("RobotomyRequestForm", "Ines");
 
-        doc.beSigned(xisuma);
-        doc.execute(xisuma);
+        miguel.signForm(*form);
+        miguel.executeForm(*form);
+        delete form;
     }
     catch (std::exception& e) {
         std::cerr << e.what() << std::endl;
@@ -49,30 +47,14 @@ int main() {
     std::cout << std::endl;
 
     try {
-        std::cout << "--- execute() with no signature ---" << std::endl;
+        Bureaucrat miguel("Miguel", 1);
+        Intern ryan;
 
-        PresidentialPardonForm doc("Pearl");
-        Bureaucrat gemini("Gemini", MAXIMUM_GRADE);
+        AForm* form = ryan.makeForm( "PresidentialPardonForm", "Ines");
 
-        doc.execute(gemini);
-    }
-    catch (std::exception& e) {
-        std::cerr << e.what() << std::endl;
-    }
-
-    std::cout << std::endl;
-
-
-    try {
-        std::cout << "--- executeForm() with not enough grade ---" << std::endl;
-
-        ShrubberyCreationForm doc("file");
-        Bureaucrat angela("Angela", 140);
-
-        angela.signForm(doc);
-        std::cout << std::endl;
-        angela.executeForm(doc);
-        std::cout << std::endl;
+        miguel.signForm(*form);
+        miguel.executeForm(*form);
+        delete form;
     }
     catch (std::exception& e) {
         std::cerr << e.what() << std::endl;
@@ -81,59 +63,17 @@ int main() {
     std::cout << std::endl;
 
     try {
-        std::cout << "--- ShrubberyCreationForm ---" << std::endl;
+        Bureaucrat miguel("Miguel", 1);
+        Intern ryan;
 
-        ShrubberyCreationForm doc("file");
-        Bureaucrat angela("Angela", 138);
+        AForm* form = ryan.makeForm( "asfds", "wiwi");
 
-        angela.signForm(doc);
-        std::cout << std::endl;
-        angela.executeForm(doc);
-        std::cout << std::endl;
+        miguel.signForm(*form);
+        miguel.executeForm(*form);
+        delete form;
     }
     catch (std::exception& e) {
         std::cerr << e.what() << std::endl;
     }
 
-    std::cout << std::endl;
-
-    try {
-        std::cout << "--- RobotomyRequestForm ---" << std::endl;
-        RobotomyRequestForm doc("Dwight");
-        Bureaucrat andy("Andy", 45);
-
-        andy.signForm(doc);
-        std::cout << std::endl;
-        andy.executeForm(doc);
-        std::cout << std::endl;
-        andy.executeForm(doc);
-        std::cout << std::endl;
-        andy.executeForm(doc);
-        std::cout << std::endl;
-        andy.executeForm(doc);
-        std::cout << std::endl;
-        andy.executeForm(doc);
-        std::cout << std::endl;
-        andy.executeForm(doc);
-        std::cout << std::endl;
-    }
-    catch (std::exception& e) {
-        std::cerr << e.what() << std::endl;
-    }
-
-    std::cout << std::endl;
-
-    try {
-        std::cout << "--- PresidentialPardonForm ---" << std::endl;
-        PresidentialPardonForm doc("Ryan");
-        Bureaucrat roy("Roy", 5);
-
-        roy.signForm(doc);
-        roy.executeForm(doc);
-    }
-    catch (std::exception& e) {
-        std::cerr << e.what() << std::endl;
-    }
-
-    return 0;
 }
