@@ -86,4 +86,5 @@ int main(void) {
 	identify(idk);
 	identify(*idk);
 
+	delete idk;
 }
