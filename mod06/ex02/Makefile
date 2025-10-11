@@ -8,9 +8,7 @@
 
 NAME		:=	bin
 
-SRC			:=	src/main.cpp\
-				src/Format.cpp\
-				src/ScalarConverter.cpp
+SRC			:=	src/main.cpp
 
 OBJ			:=	$(SRC:%.cpp=obj/%.o)
 

@@ -9,8 +9,7 @@
 NAME		:=	bin
 
 SRC			:=	src/main.cpp\
-				src/Format.cpp\
-				src/ScalarConverter.cpp
+				src/Serializer.cpp
 
 OBJ			:=	$(SRC:%.cpp=obj/%.o)
 
