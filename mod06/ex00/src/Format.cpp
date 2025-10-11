@@ -10,7 +10,9 @@
 
 Format::Format():
 _formatIsValid(true),
-_charIsValid(true)
+_charIsValid(true),
+_intIsValid(true),
+_floatIsValid(true)
 {}
 
 Format::~Format() {}
@@ -57,6 +59,14 @@ void Format::setNoChar() {
     this->_charIsValid = false;
 }
 
+void Format::setNoInt() {
+    this->_intIsValid = false;
+}
+
+void Format::setNoFloat() {
+    this->_floatIsValid = false;
+}
+
 void Format::setInvalidFormat() {
     this->_formatIsValid = false;
 }
@@ -97,9 +107,34 @@ void Format::print() {
         std::cout << "char: Impossible" << std::endl;
     }
 
-    std::cout << "int: " << this->_intNotation << std::endl;
+	if (this->_intIsValid) {
+		std::cout << "int: " << this->_intNotation << std::endl;
+	}
+	else {
+		std::cout << "int: Impossible" << std::endl;
+	}
 
     std::cout << "float: " << std::fixed << std::setprecision(1) << this->_floatNotation << "f" << std::endl;
 
     std::cout << "double: " << std::fixed << std::setprecision(1) << this->_doubleNotation << std::endl;
+}
+
+void Format::printEdge(const std::string & str) {
+	std::cout << "char: Impossible" << std::endl;
+	std::cout << "int: Impossible" << std::endl;
+
+	if (str == "+inf" || str == "+inff") {
+		std::cout << "float: +inff" << std::endl;
+		std::cout << "double: +inf" << std::endl;
+		return;
+	}
+
+	if (str == "-inf" || str == "-inff") {
+		std::cout << "float: -inff" << std::endl;
+		std::cout << "double: -inf" << std::endl;
+		return;
+	}
+	
+	std::cout << "float: nanf" << std::endl;
+	std::cout << "double: nan" << std::endl;
 }

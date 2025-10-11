@@ -7,6 +7,8 @@
 #ifndef EX00_FORMAT_HPP
 #define EX00_FORMAT_HPP
 
+#include <string>
+
 class Format {
     private:
         bool _formatIsValid;
@@ -32,11 +34,14 @@ class Format {
 
         void setInvalidFormat();
         void setNoChar();
+        void setNoInt();
+        void setNoFloat();
         void addCharNotation(char c);
         void addIntNotation(int n);
         void addFloatNotation(float n);
         void addDoubleNotation(double n);
         void print();
+        static void printEdge(const std::string& str);
 };
 
 #endif //EX00_FORMAT_HPP

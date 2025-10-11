@@ -11,6 +11,7 @@
 #include <Format.hpp>
 
 enum scalarType {
+	EDGE,
     CHAR,
     INT,
     FLOAT,
