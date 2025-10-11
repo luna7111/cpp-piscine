@@ -114,7 +114,12 @@ void Format::print() {
 		std::cout << "int: Impossible" << std::endl;
 	}
 
-    std::cout << "float: " << std::fixed << std::setprecision(1) << this->_floatNotation << "f" << std::endl;
+	if (this->_floatIsValid) {
+		std::cout << "float: " << std::fixed << std::setprecision(1) << this->_floatNotation << "f" << std::endl;
+	}
+	else {
+		std::cout << "float: Impossible" << std::endl;
+	}
 
     std::cout << "double: " << std::fixed << std::setprecision(1) << this->_doubleNotation << std::endl;
 }

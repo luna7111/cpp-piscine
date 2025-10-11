@@ -125,7 +125,7 @@ Format *ScalarConverter::_convertDouble(const std::string &str) {
 		format->setNoInt();
 	}
 
-	if (number < FLT_MAX && number < FLT_MIN) {
+	if (number < FLT_MAX && number > FLT_MIN) {
 		format->addFloatNotation(static_cast<float>(number));
 	}
 	else {
