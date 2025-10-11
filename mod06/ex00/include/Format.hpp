@@ -12,8 +12,10 @@ class Format {
         bool _formatIsValid;
         bool _charIsValid;
         char _charNotation;
+        bool _intIsValid;
         int _intNotation;
         float _floatNotation;
+        bool _floatIsValid;
         double _doubleNotation;
     public:
         Format();
