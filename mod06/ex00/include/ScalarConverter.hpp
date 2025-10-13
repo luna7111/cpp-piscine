@@ -23,6 +23,11 @@ class ScalarConverter {
     public:
         static void convert(const std::string& str);
     private:
+		ScalarConverter();
+		ScalarConverter(const ScalarConverter& src);
+		~ScalarConverter();
+		ScalarConverter& operator = (const ScalarConverter& rhs);
+
         static enum scalarType _identify(const std::string& str);
         static Format* _convertChar(const std::string& str);
         static Format* _convertInt(const std::string& str);

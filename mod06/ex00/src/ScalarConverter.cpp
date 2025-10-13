@@ -12,6 +12,13 @@
 #include <iostream>
 #include <Format.hpp>
 
+ScalarConverter::ScalarConverter(){}
+ScalarConverter::ScalarConverter(const ScalarConverter& src){(void)src;}
+ScalarConverter::~ScalarConverter(){}
+ScalarConverter& ScalarConverter::operator = (const ScalarConverter& rhs) {
+	(void)rhs;
+	return *this;
+}
 
 enum scalarType ScalarConverter::_identify(const std::string &str) {
 
@@ -59,9 +66,12 @@ Format *ScalarConverter::_convertInt(const std::string &str) {
         return format;
     }
 
-    (isascii(number))
-    ? format->addCharNotation(number)
-    : format->setNoChar();
+    if (isascii(number)) {
+		format->addCharNotation(static_cast<int>(number));
+	}
+	else {
+		format->setNoChar();
+	}
     format->addIntNotation(number);
     format->addFloatNotation(static_cast<float>(number));
     format->addDoubleNotation(static_cast<double>(number));
