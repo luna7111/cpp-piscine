@@ -20,4 +20,6 @@ int main(void) {
 	std::cout << original->someData << std::endl;
 	std::cout << ptr << std::endl;
 	std::cout << deserialized->someData << std::endl;
+
+	delete original;
 }
