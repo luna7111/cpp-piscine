@@ -30,22 +30,42 @@ int main()
         std::cout << "std::list size(): " << lst.size() << std::endl;
 
         std::cout << std::endl;
+		
+		{
+			MutantStack<int>::iterator mts_it = mts.begin();
+			std::list<int>::iterator lst_it = lst.begin();
 
-        MutantStack<int>::iterator mts_it = mts.begin();
-        std::list<int>::iterator lst_it = lst.begin();
+
+			std::cout << "MutantStack iterator test: " << std::endl;
+			while (mts_it != mts.end()) {
+				std::cout << *mts_it << std::endl;
+				++mts_it;
+			}
+
+			std::cout << "std::list iterator test: " << std::endl;
+			while (lst_it != lst.end()) {
+				std::cout << *lst_it << std::endl;
+				++lst_it;
+			}
+		}
+
+		{
+			MutantStack<int>::iterator mts_it = mts.end();
+			std::list<int>::iterator lst_it = lst.end();
 
 
-        std::cout << "MutantStack iterator test: " << std::endl;
-        while (mts_it != mts.end()) {
-            std::cout << *mts_it << std::endl;
-            ++mts_it;
-        }
+			std::cout << "MutantStack iterator test (backwards): " << std::endl;
+			while (mts_it != mts.begin()) {
+				--mts_it;
+				std::cout << *mts_it << std::endl;
+			}
 
-        std::cout << "std::list iterator test: " << std::endl;
-        while (lst_it != lst.end()) {
-            std::cout << *lst_it << std::endl;
-            ++lst_it;
-        }
+			std::cout << "std::list iterator test (backwards): " << std::endl;
+			while (lst_it != lst.begin()) {
+				--lst_it;
+				std::cout << *lst_it << std::endl;
+			}
+		}
 
     }
     return 0;
