@@ -27,11 +27,16 @@ int main(int argc, char** argv) {
 
     std::string current_line;
     while (std::getline(input_file, current_line)) {
+        if (inputLineIsValid(current_line) == false) {
+            std::cout << "Invalid line -> " << current_line << std::endl;
+            continue;
+        }
         std::string date = current_line.substr(0, current_line.find(" | "));
         char* end;
         double amount = strtod(current_line.substr(current_line.find(" | ") + 3).c_str(), &end);
 
-        std::cout << date << " => " << amount << " = " << prize_lookup.getValue(amount, date) << std::endl;
+        double value = prize_lookup.getValue(amount, date);
+        std::cout << date << " => " << amount << " = " << value << std::endl;
     }
 
 }
