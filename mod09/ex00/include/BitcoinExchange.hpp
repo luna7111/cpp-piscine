@@ -29,6 +29,7 @@ class BitcoinExchange {
 
 };
 
+bool inputLineIsEmpty(const std::string& line);
 bool inputLineIsValid(const std::string& line);
 
 #endif //EX00_BITCOINEXCHANGE_HPP

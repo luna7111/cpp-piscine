@@ -77,6 +77,15 @@ bool csvLineIsValid(const std::string& line) {
     return true;
 }
 
+bool inputLineIsEmpty(const std::string& line) {
+    for (size_t i = 0; i < line.length(); i ++) {
+        if (std::isspace(line[i]) == false) {
+            return false;
+        }
+    }
+    return true;
+}
+
 bool inputLineIsValid(const std::string& line) {
     int spacer_position = line.find(" | ");
     if (spacer_position < 0) {
@@ -88,8 +97,16 @@ bool inputLineIsValid(const std::string& line) {
         return false;
     }
 
-    double amount;
-    std::istringstream(line.substr(spacer_position + 3)) >> amount;;
+    char *after_number;
+    double amount = std::strtod(line.substr(spacer_position + 3).c_str(), &after_number);
+
+    while (*after_number == ' ') {
+        after_number++;
+    }
+
+    if (*after_number != '\0') {
+        return false;
+    }
 
     if (amount < 0 || amount > 1000) {
         return false;
@@ -122,13 +139,9 @@ BitcoinExchange::BitcoinExchange() {
     this->_parseHistory();
 }
 
-
 void BitcoinExchange::_parseHistory() {
 
     std::string current_line;
-
-    std::string current_key;
-    double current_value;
 
     while (std::getline(this->_history_file, current_line)) {
         char* end;
@@ -138,8 +151,8 @@ void BitcoinExchange::_parseHistory() {
         }
 
         size_t comma_position = current_line.find(',');
-        current_key = current_line.substr(0, comma_position);
-        current_value = strtod(current_line.substr(comma_position + 1).c_str(), &end);
+        std::string current_key = current_line.substr(0, comma_position);
+        double current_value = strtod(current_line.substr(comma_position + 1).c_str(), &end);
 
         this->_history[current_key] = current_value;
     }
@@ -147,6 +160,10 @@ void BitcoinExchange::_parseHistory() {
 
 double BitcoinExchange::getValue(double prize, const std::string &date) {
     std::map<std::string, double>::iterator it = this->_history.begin();
+
+    if (date < it->first) {
+        return 0;
+    }
 
     while (date >= it->first) {
         ++it;

@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
 
     std::string current_line;
     while (std::getline(input_file, current_line)) {
-        if (inputLineIsValid(current_line) == false) {
+        if (inputLineIsEmpty() == false && inputLineIsValid(current_line) == false) {
             std::cout << "Invalid line -> " << current_line << std::endl;
             continue;
         }
