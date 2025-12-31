@@ -26,6 +26,11 @@ int main(int argc, char** argv) {
     BitcoinExchange prize_lookup;
 
     std::string current_line;
+    std::getline(input_file, current_line);
+    if (current_line != "date,exchange_rate") {
+        std::cerr << "Wrong csv header." << std::endl;
+        return 1;
+    }
     while (std::getline(input_file, current_line)) {
         if (inputLineIsEmpty(current_line)) {
             continue;
