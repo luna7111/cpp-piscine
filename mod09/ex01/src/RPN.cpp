@@ -9,28 +9,21 @@
 
 /* Default constructor */
 RPN::RPN() {
-    std::cout<<"RPN default constructor called"<<std::endl;
 }
 
 /* Copy constructor */
 RPN::RPN(const RPN& source) {
-    std::cout<<"RPN copy constructor called"<<std::endl;
-
     *this = source;
 }
 
 /* Copy assignment operator */
 RPN& RPN::operator=(const RPN& rhs) {
-    std::cout<<"RPN copy assignment operator called"<<std::endl;
-
     (void)rhs;
-
     return (*this);
 }
 
 /* Default destructor */
 RPN::~RPN() {
-    std::cout<<"RPN destructor called"<<std::endl;
 }
 
 RPN::RPN(const std::string & expression) {
@@ -101,6 +94,8 @@ double RPN::solve() {
                         break;
                     case '/':
                         this->_content.pop();
+                        if (rhs.value == 0)
+                            throw DivisionByZero();
                         result.value = lhs.value / rhs.value;
                         break;
                     default:

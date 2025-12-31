@@ -23,6 +23,9 @@ int main(int argc, char** argv) {
 
         std::cout << calc.solve() << std::endl;
     }
+    catch (RPN::DivisionByZero & e) {
+        std::cerr << e.what() << std::endl;
+    }
     catch (std::exception & e) {
         std::cerr << "Malformed expression." << std::endl;
     }

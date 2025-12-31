@@ -31,7 +31,11 @@ class RPN {
 		double solve();
 
 		class UnexpectedCharacter: public std::exception {
-		public: const char* what() const throw() { return "Unexpected Character"; }
+		public: const char* what() const throw() { return "Unexpected Character."; }
+		};
+
+		class DivisionByZero: public std::exception {
+		public: const char* what() const throw() { return "Cannot divide by zero."; }
 		};
 
     private:
