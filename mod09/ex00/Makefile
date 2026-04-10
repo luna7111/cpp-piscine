@@ -9,7 +9,7 @@ OBJ			:=	$(SRC:%.cpp=obj/%.o)
 
 CXX			:=	c++
 
-CXXFLAGS	:= -Wall -Wextra -Werror -Include -std=c++98
+CXXFLAGS	:= -Wall -Wextra -Werror -Include -std=c++98 -g3
 
 ###################################################
 
@@ -33,4 +33,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: obj all clean fclean re
+.PHONY: all clean fclean re
