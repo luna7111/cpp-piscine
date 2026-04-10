@@ -18,8 +18,9 @@ int main (int argc, char** argv) {
     BitcoinExchange prize_lookup;
 
     std::string current_line;
+
     while (std::getline(input_file, current_line)) {
-        if (inputLineIsEmpty(current_line)) {
+        if (inputLineIsEmpty(current_line) || current_line == "date | value") {
             continue;
         }
         if (inputLineIsValid(current_line) == false) {
