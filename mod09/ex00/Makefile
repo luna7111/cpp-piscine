@@ -9,7 +9,7 @@ OBJ			:=	$(SRC:%.cpp=obj/%.o)
 
 CXX			:=	c++
 
-CXXFLAGS	:= -Wall -Wextra -Werror -Include -std=c++98 -g3
+CXXFLAGS	:= -Wall -Wextra -Werror -Include -std=c++98
 
 ###################################################
 

@@ -28,8 +28,7 @@ int main (int argc, char** argv) {
             continue;
         }
         std::string date = current_line.substr(0, current_line.find(" | "));
-        char* end;
-        double amount = strtod(current_line.substr(current_line.find(" | ") + 3).c_str(), &end);
+        double amount = strtod(current_line.substr(current_line.find(" | ") + 3).c_str(), NULL);
 
         double value = prize_lookup.getValue(amount, date);
         std::cout << date << " => " << amount << " = " << value << std::endl;
