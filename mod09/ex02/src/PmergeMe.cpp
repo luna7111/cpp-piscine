@@ -166,6 +166,21 @@ void PmergeMe::_mergeInsertion(std::vector<unsigned int> &to_sort) {
 
     //insertion
 
+    for (std::vector<unsigned int>::iterator it = g_jacobstal_sequence.begin(); it != g_jacobstal_sequence.end(); it++) {
+
+        unsigned int to_insert;
+
+        try {
+            to_insert = X.at(*it);
+        }
+        catch(const std::exception &e) {
+            (void)e;
+            break;
+        }
+        binary_insertion(S, to_insert);
+    }
+
+
     for (std::vector<unsigned int>::iterator X_it = X.begin(); X_it != X.end(); ++X_it) {
         
         binary_insertion(S, *X_it);
