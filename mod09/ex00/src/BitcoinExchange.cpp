@@ -150,11 +150,11 @@ double BitcoinExchange::getValue(double amount, const std::string &date) {
         return 0;
     }
 
-    while (date >= it->first) {
+    while (it != _history.end() && date >= it->first) {
         ++it;
     }
 
     --it;
 
-    return amount = it->second;
+    return amount * it->second;
 }
